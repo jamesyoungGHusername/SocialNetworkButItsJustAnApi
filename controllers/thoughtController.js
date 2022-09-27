@@ -19,14 +19,11 @@ module.exports = {
     deleteThought(req,res){
 
     },
-    createReaction(req,res){
-
-    },
     //(/api/thoughts/:thoughtId/reactions)
     addReaction(req,res){
 
     },
     deleteReaction(req,res){
-        
+
     }
 };
