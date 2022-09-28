@@ -6,7 +6,7 @@ const thoughtSchema = new Schema(
         thoughtText:{
             type:String,
             required:true,
-            match:[/^[.]{1,280}$/,'Thoughts must be between 1 and 280 characters']
+            match:[/^[\s\S]{1,280}$/,'Thoughts must be between 1 and 280 characters']
         },
         createdAt:{
             type: Date,
@@ -24,7 +24,6 @@ const thoughtSchema = new Schema(
         toJSON: {
           virtuals: true,
         },
-        id: false,
     }
 );
 

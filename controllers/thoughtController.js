@@ -1,4 +1,5 @@
-const { Thought } = require('../models');
+const { Thought, User } = require('../models');
+
 
 module.exports = {
     getThoughts(req,res){
@@ -19,7 +20,21 @@ module.exports = {
     //create thought and add to user list of thoughts.
     createThought(req,res){
         Thought.create(req.body)
-        .then((dbThoughtData) => res.json(dbThoughtData))
+        .then((thought) => {
+            console.log(thought);
+            
+            return User.findOneAndUpdate(
+              { username: req.body.username },
+              { $addToSet: { thoughts: thought._id } },
+              { new: true }
+            );
+          }).then((user) =>{
+          !user
+            ? res.status(404).json({
+                message: 'Thought created, but found no user with that ID',
+              })
+            : res.json('Created the thought 🎉')
+            })
         .catch((err)=> res.status(500).json(err));
     },
     //by _id
