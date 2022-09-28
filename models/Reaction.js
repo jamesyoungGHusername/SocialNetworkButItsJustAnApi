@@ -9,7 +9,7 @@ const reactionSchema = new Schema(
         reactionBody:{
             type:String,
             required:true,
-            match:[/^[.]{1,280}$/,'reactions must be fewer than 280 characters']
+            match:[/^[\s\S]{1,280}$/,'reactions must be fewer than 280 characters']
         },
         username:{
             type:String,
