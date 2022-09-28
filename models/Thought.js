@@ -6,7 +6,7 @@ const thoughtSchema = new Schema(
         thoughtText:{
             type:String,
             required:true,
-            match:[/^{1,280}$/,'Thoughts must be between 1 and 280 characters']
+            match:[/^[]{1,280}$/,'Thoughts must be between 1 and 280 characters']
         },
         createdAt:{
             type: Date,
@@ -33,6 +33,6 @@ thoughtSchema.virtual('reactionCount').get(function () {
 });
 
 
-const Thought = model('user',thoughtSchema)
+const Thought = model('thought',thoughtSchema)
 
 module.exports = Thought;
