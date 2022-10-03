@@ -4,7 +4,7 @@
 
   # Description
 
-    A mongoose back-end for a hypothetical social media platform, made for a course at DU.
+    A mongoose back-end for a hypothetical social media platform, made for a course at DU. It saves "users" along with their friends lists, and lists of "thoughts" and "reactions" posted by those users. 
     
 
   ## Table of Contents
@@ -27,10 +27,7 @@
 
   # Installation
 
-  It can be downloaded from GitHub, and run using the terminal. Uses node.js, npm, Inquirer, and mysql2
-
-
-
+  It can be downloaded from GitHub, and run using the terminal. Once the server is started you'll need to use insomnia or some other tool to actually make the calls to the database since there's no associated front end. Refer to the router files for what paths to make calls to.
   
 
   # Usage 

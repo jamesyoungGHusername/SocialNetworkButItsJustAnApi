@@ -3,6 +3,7 @@ const Reaction = require('./Reaction');
 
 const thoughtSchema = new Schema(
     {
+        //A required string, uses regex to match the character length condition
         thoughtText:{
             type:String,
             required:true,
@@ -11,7 +12,6 @@ const thoughtSchema = new Schema(
         createdAt:{
             type: Date,
             default: Date.now,
-
         },
         username:{
             type: String,
